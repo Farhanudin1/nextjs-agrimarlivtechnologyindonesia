@@ -562,7 +562,7 @@ export default function Home() {
                     <div className="mr-4 rounded-full bg-green-100 p-2">
                       <svg
                         className="h-4 w-4 text-green-600"
-                        xmlns="bg3.png"
+                        xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
