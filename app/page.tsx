@@ -949,7 +949,7 @@ export default function Home() {
                     </svg>
                     <div>
                       <h3 className="font-bold">Alamat</h3>
-                      <p className="text-muted-foreground">Jl. Teknologi Terpadu No. 123, Jakarta Selatan, Indonesia</p>
+                      <p className="text-muted-foreground">Jl. Raya Bekasi Timur Regensi No.BlokE2/22, Cimuning, Kec. Mustika Jaya, Kota Bks, Jawa Barat 17155</p>
                     </div>
                   </div>
                 </div>
