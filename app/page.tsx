@@ -687,7 +687,7 @@ export default function Home() {
               </div>
               <div className="flex items-center justify-center order-1 md:order-2">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="bg3.png"
                   width={600}
                   height={400}
                   alt="AI and Big Data Analytics"
