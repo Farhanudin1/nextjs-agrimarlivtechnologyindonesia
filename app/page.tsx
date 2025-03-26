@@ -520,7 +520,7 @@ export default function Home() {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 mt-12">
               <div className="flex items-center justify-center">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="bg1.jpg"
                   width={600}
                   height={400}
                   alt="IoT Technology"
