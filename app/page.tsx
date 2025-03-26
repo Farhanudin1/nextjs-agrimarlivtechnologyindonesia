@@ -1216,7 +1216,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Agrimarliv Technology Indonesia. Hak Cipta Dilindungi.
+            © {new Date().getFullYear()} PT. Agrimarliv Technology Indonesia. Hak Cipta Dilindungi.
           </div>
         </div>
       </footer>
