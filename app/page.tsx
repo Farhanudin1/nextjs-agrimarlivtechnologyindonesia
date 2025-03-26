@@ -219,7 +219,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold">10+ Ahli</h3>
                 <p className="text-center text-muted-foreground">
-                  Tim kami juga di dukung oleh ahli tanaman, IoT, Kecerdasan Buatan (AI), Cyber Security dan berbagai ahli dibidang teknologi lainnya
+                  Tim kami juga di dukung oleh ahli Hama dan penyakit tanaman, Agroteknologi, IoT, Kecerdasan Buatan (AI), Cyber Security dan berbagai ahli dibidang teknologi lainnya
                 </p>
               </div>
             </div>
