@@ -930,7 +930,7 @@ export default function Home() {
                     </svg>
                     <div>
                       <h3 className="font-bold">Email</h3>
-                      <p className="text-muted-foreground">info@agrimarliv.co.id</p>
+                      <p className="text-muted-foreground">agrimarlivtechnologyindonesia@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -1144,7 +1144,7 @@ export default function Home() {
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                     <polyline points="22,6 12,13 2,6" />
                   </svg>
-                  info@agrimarliv.co.id
+                  agrimarlivtechnologyindonesia@gmail.com
                 </li>
               </ul>
               <div className="flex space-x-4">
