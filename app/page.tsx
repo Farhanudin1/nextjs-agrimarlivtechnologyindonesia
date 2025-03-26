@@ -911,7 +911,7 @@ export default function Home() {
                     </svg>
                     <div>
                       <h3 className="font-bold">Telepon</h3>
-                      <p className="text-muted-foreground">+62 21 1234 5678</p>
+                      <p className="text-muted-foreground">+62 22 1182 4620</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -1016,7 +1016,7 @@ export default function Home() {
                         id="phone"
                         type="tel"
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        placeholder="+62 812 3456 7890"
+                        placeholder=">+62 22 1182 4620"
                       />
                     </div>
                     <div className="space-y-2">
@@ -1128,7 +1128,7 @@ export default function Home() {
                   >
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                   </svg>
-                  +62 21 1234 5678
+                  >+62 22 1182 4620
                 </li>
                 <li className="flex items-center">
                   <svg
