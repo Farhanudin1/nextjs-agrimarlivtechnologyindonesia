@@ -196,7 +196,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold">10+ Project IoT</h3>
                 <p className="text-center text-muted-foreground">
-                  Telah menyelesaikan puluhan proyek di sektor pertanian, maritim, dan peternakan
+                  Telah menyelesaikan puluhan project IoT di berbagai sektor
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm">
@@ -219,7 +219,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold">10+ Ahli</h3>
                 <p className="text-center text-muted-foreground">
-                  Tim kami terdiri dari ahli pertanian, kelautan, peternakan, dan kecerdasan buatan (AI)
+                  Tim kami juga di dukung oleh ahli tanaman, IoT, Kecerdasan Buatan (AI), Cyber Security dan berbagai ahli dibidang teknologi lainnya
                 </p>
               </div>
             </div>
@@ -256,7 +256,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold text-center">Maritime</h3>
                 <p className="text-center text-muted-foreground">
-                  <span className="font-semibold">Perikanan</span> - Solusi teknologi kami mendukung budidaya perikanan
+                  <span className="font-semibold">Perikanan</span> - Teknologi kami mendukung budidaya perikanan
                   air tawar dan laut dengan sistem monitoring kualitas air dan manajemen pakan otomatis.
                 </p>
               </div>
