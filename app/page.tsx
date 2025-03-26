@@ -74,17 +74,22 @@ export default function Home() {
             </button>
           </nav>
           <div className="flex items-center gap-4">
-            <Button className="bg-green-600 hover:bg-green-700">Hubungi Kami</Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              <span className="sr-only">Toggle menu</span>
-            </Button>
-          </div>
+          <Button 
+          className="bg-green-600 hover:bg-green-700"
+          onClick={() => window.open("https://wa.me/6282211824620", "_blank")}
+          >
+          Hubungi Kami
+          </Button>
+          <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+    {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+    <span className="sr-only">Toggle menu</span>
+  </Button>
+</div>
         </div>
 
         {/* Mobile Menu */}
