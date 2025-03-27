@@ -877,8 +877,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Tim Ahli Multi-disiplin</h3>
                 <p className="text-muted-foreground">
-                  Tim kami terdiri dari ahli pertanian, perikanan, peternakan, dan teknologi informasi yang
-                  berpengalaman.
+                  Tim kami sudah memiliki banyak pengalaman dalam berbagai proyek agriculture maupun teknologi
                 </p>
               </div>
             </div>
