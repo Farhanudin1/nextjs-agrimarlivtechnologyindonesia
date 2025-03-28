@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'PT. Agrimarliv Technology Indonesia',
-  description: 'Created with v0',
+  description: 'Agriculture Maritime Livestock',
   generator: 'v0.dev',
 }
 
