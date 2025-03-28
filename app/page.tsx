@@ -1112,26 +1112,28 @@ export default function Home() {
             <div className="space-y-4">
               <h3 className="text-lg font-bold">Perusahaan</h3>
               <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-primary">
+            <button
+                  onClick={() => scrollToSection("about")} 
+                  className="text-muted-foreground hover:text-primary"
+                  >
                     Tentang Kami
-                  </Link>
-                </li>
+                    </button>
                 <li>
                   <Link href="#" className="text-muted-foreground hover:text-primary">
                     Karir
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-primary">
-                    Blog
+                  <Link href="https://v0-buat-dashboard.vercel.app/" className="text-muted-foreground hover:text-primary">
+                    Dashboard
                   </Link>
                 </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-primary">
+                <button
+                  onClick={() => scrollToSection("contact")} 
+                  className="text-muted-foreground hover:text-primary"
+                  >
                     Kontak
-                  </Link>
-                </li>
+                    </button>
               </ul>
             </div>
             <div className="space-y-4">
