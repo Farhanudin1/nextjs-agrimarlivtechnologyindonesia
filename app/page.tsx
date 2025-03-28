@@ -148,7 +148,11 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button size="lg" className="bg-green-600 hover:bg-green-700">
+                  <Button
+                    size="lg"
+                    className="bg-green-600 hover:bg-green-700"
+                    onClick={() => (window.location.href = "https://v0-buat-dashboard.vercel.app/")}
+                  >
                     Pelajari Lebih Lanjut
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -877,7 +881,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Tim Ahli Multi-disiplin</h3>
                 <p className="text-muted-foreground">
-                  Tim kami sudah memiliki banyak pengalaman dalam berbagai proyek agriculture maupun teknologi
+                  Tim kami sudah memiliki banyak pengalaman dalam berbagai bidang Riset dan Inovasi
                 </p>
               </div>
             </div>
