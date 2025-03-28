@@ -45,7 +45,9 @@ export default function Home() {
             </div>
           </div>
           <nav className="hidden md:flex gap-6">
-            <button onClick={() => scrollToSection("hero")} className="text-sm font-medium text-primary">
+            <button onClick={() => scrollToSection("hero")}
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            >
               Beranda
             </button>
             <button
@@ -53,6 +55,11 @@ export default function Home() {
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
               Tentang Kami
+            </button>
+            <button onClick={() => scrollToSection("visi")}
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            >
+              Visi
             </button>
             <button
               onClick={() => scrollToSection("services")}
@@ -67,16 +74,16 @@ export default function Home() {
               Teknologi
             </button>
             <button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => scrollToSection("keunggulan kami")}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
-              Kontak
+              Keunggulan kami
             </button>
           </nav>
           <div className="flex items-center gap-4">
             <Button
               className="bg-green-600 hover:bg-green-700"
-              onClick={() => window.open("https://wa.me/6282211824620", "_blank")}
+              onClick={() => scrollToSection("contact")}
             >
               Hubungi Kami
             </Button>
@@ -96,7 +103,9 @@ export default function Home() {
         {mobileMenuOpen && (
           <div className="md:hidden absolute top-16 inset-x-0 bg-background border-b shadow-lg z-50">
             <div className="container py-4 flex flex-col space-y-4">
-              <button onClick={() => scrollToSection("hero")} className="text-sm font-medium py-2 text-primary">
+              <button onClick={() => scrollToSection("hero")}
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              >
                 Beranda
               </button>
               <button
@@ -104,6 +113,11 @@ export default function Home() {
                 className="text-sm font-medium py-2 text-muted-foreground transition-colors hover:text-primary"
               >
                 Tentang Kami
+              </button>
+              <button onClick={() => scrollToSection("visi")}
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              >
+                Visi
               </button>
               <button
                 onClick={() => scrollToSection("services")}
@@ -118,10 +132,10 @@ export default function Home() {
                 Teknologi
               </button>
               <button
-                onClick={() => scrollToSection("contact")}
+                onClick={() => scrollToSection("keunggulan kami")}
                 className="text-sm font-medium py-2 text-muted-foreground transition-colors hover:text-primary"
               >
-                Kontak
+                Keunggulan kami
               </button>
             </div>
           </div>
@@ -235,7 +249,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section id="visi" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -795,7 +809,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section id="keunggulan kami" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
