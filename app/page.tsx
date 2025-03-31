@@ -1,14 +1,39 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Fish, Leaf, LineChart, Sprout, CircleDollarSign, Menu, X, Droplets, TreesIcon as Plant } from "lucide-react"
+import {
+  ArrowRight,
+  Fish,
+  Leaf,
+  LineChart,
+  Sprout,
+  CircleDollarSign,
+  Menu,
+  X,
+  TreesIcon as Plant,
+  Droplets,
+  Smartphone,
+  BarChart3,
+  CloudRain,
+  Microscope,
+  Database,
+  Cpu,
+} from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [videoOpen, setVideoOpen] = useState(false)
+  const [agricultureOpen, setAgricultureOpen] = useState(false)
+  const [aquacultureOpen, setAquacultureOpen] = useState(false)
+  const [livestockOpen, setLivestockOpen] = useState(false)
 
   // Close mobile menu when window is resized to desktop size
   useEffect(() => {
@@ -31,6 +56,30 @@ export default function Home() {
     }
   }
 
+  // Handle WhatsApp form submission
+  const handleWhatsAppSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+
+    // Get form values
+    const firstName = (document.getElementById("first-name") as HTMLInputElement).value
+    const lastName = (document.getElementById("last-name") as HTMLInputElement).value
+    const email = (document.getElementById("email") as HTMLInputElement).value
+    const phone = (document.getElementById("phone") as HTMLInputElement).value
+    const message = (document.getElementById("message") as HTMLTextAreaElement).value
+
+    // Format message for WhatsApp
+    const whatsappMessage = `*Pesan dari Website Agrimarliv*\n\n*Nama:* ${firstName} ${lastName}\n*Email:* ${email}\n*Telepon:* ${phone}\n\n*Pesan:*\n${message}`
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage)
+
+    // WhatsApp phone number
+    const whatsappNumber = "6282211824620"
+
+    // Open WhatsApp with the message
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank")
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -45,7 +94,8 @@ export default function Home() {
             </div>
           </div>
           <nav className="hidden md:flex gap-6">
-            <button onClick={() => scrollToSection("hero")}
+            <button
+              onClick={() => scrollToSection("hero")}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
               Beranda
@@ -56,7 +106,8 @@ export default function Home() {
             >
               Tentang Kami
             </button>
-            <button onClick={() => scrollToSection("visi")}
+            <button
+              onClick={() => scrollToSection("visi")}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
               Visi
@@ -81,10 +132,7 @@ export default function Home() {
             </button>
           </nav>
           <div className="flex items-center gap-4">
-            <Button
-              className="bg-green-600 hover:bg-green-700"
-              onClick={() => scrollToSection("contact")}
-            >
+            <Button className="bg-green-600 hover:bg-green-700" onClick={() => scrollToSection("contact")}>
               Hubungi Kami
             </Button>
             <Button
@@ -103,7 +151,8 @@ export default function Home() {
         {mobileMenuOpen && (
           <div className="md:hidden absolute top-16 inset-x-0 bg-background border-b shadow-lg z-50">
             <div className="container py-4 flex flex-col space-y-4">
-              <button onClick={() => scrollToSection("hero")}
+              <button
+                onClick={() => scrollToSection("hero")}
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               >
                 Beranda
@@ -114,7 +163,8 @@ export default function Home() {
               >
                 Tentang Kami
               </button>
-              <button onClick={() => scrollToSection("visi")}
+              <button
+                onClick={() => scrollToSection("visi")}
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               >
                 Visi
@@ -165,12 +215,12 @@ export default function Home() {
                   <Button
                     size="lg"
                     className="bg-green-600 hover:bg-green-700"
-                    onClick={() => (window.location.href = "https://v0-buat-dashboard.vercel.app/")}
+                    onClick={() => scrollToSection("visi")}
                   >
                     Pelajari Lebih Lanjut
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                  <Button size="lg" variant="outline">
+                  <Button size="lg" variant="outline" onClick={() => setVideoOpen(true)}>
                     Lihat Demo
                   </Button>
                 </div>
@@ -242,7 +292,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold">10+ Ahli</h3>
                 <p className="text-center text-muted-foreground">
-                  Tim kami juga di dukung oleh ahli Hama dan penyakit tanaman, Agroteknologi, IoT, Kecerdasan Buatan (AI), Cyber Security dan berbagai ahli dibidang teknologi lainnya
+                  Tim kami juga di dukung oleh ahli Hama dan penyakit tanaman, Agroteknologi, IoT, Kecerdasan Buatan
+                  (AI), Cyber Security dan berbagai ahli dibidang teknologi lainnya
                 </p>
               </div>
             </div>
@@ -279,8 +330,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold text-center">Maritime</h3>
                 <p className="text-center text-muted-foreground">
-                  <span className="font-semibold">Perikanan</span> - Teknologi kami mendukung budidaya perikanan
-                  air tawar dan laut dengan sistem monitoring kualitas air dan manajemen pakan otomatis.
+                  <span className="font-semibold">Perikanan</span> - Teknologi kami mendukung budidaya perikanan air
+                  tawar dan laut dengan sistem monitoring kualitas air dan manajemen pakan otomatis.
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-4 rounded-lg border p-6 shadow-sm">
@@ -308,11 +359,17 @@ export default function Home() {
             </div>
             <div className="mt-12 text-center">
               <p className="max-w-[900px] mx-auto text-muted-foreground md:text-lg">
-                Dengan mengintegrasikan ketiga sektor ini, Agrimarliv menciptakan ekosistem teknologi yang komprehensif
-                untuk mendukung sistem pangan yang lebih efisien, produktif, dan berkelanjutan di Indonesia.
+                Dengan mengintegrasikan ketiga sektor ini, Agrimarliv menciptakan dashboard untuk ekosistem teknologi
+                yang komprehensif untuk mendukung sistem pangan yang lebih efisien, produktif, dan berkelanjutan di
+                Indonesia.
               </p>
               <div className="mt-8">
-                <Button className="bg-green-600 hover:bg-green-700">Pelajari Visi Kami</Button>
+                <Button
+                  onClick={() => (window.location.href = "https://v0-buat-dashboard.vercel.app/")}
+                  className="bg-green-600 hover:bg-green-700"
+                >
+                  Pelajari Visi Kami
+                </Button>
               </div>
             </div>
           </div>
@@ -388,7 +445,7 @@ export default function Home() {
                     Deteksi penyakit tanaman
                   </li>
                 </ul>
-                <Button variant="outline" className="mt-auto">
+                <Button variant="outline" className="mt-auto" onClick={() => setAgricultureOpen(true)}>
                   Pelajari Lebih Lanjut
                 </Button>
               </div>
@@ -447,7 +504,7 @@ export default function Home() {
                     Deteksi penyakit ikan
                   </li>
                 </ul>
-                <Button variant="outline" className="mt-auto">
+                <Button variant="outline" className="mt-auto" onClick={() => setAquacultureOpen(true)}>
                   Pelajari Lebih Lanjut
                 </Button>
               </div>
@@ -518,7 +575,7 @@ export default function Home() {
                     Prediksi hasil produksi
                   </li>
                 </ul>
-                <Button variant="outline" className="mt-auto">
+                <Button variant="outline" className="mt-auto" onClick={() => setLivestockOpen(true)}>
                   Pelajari Lebih Lanjut
                 </Button>
               </div>
@@ -971,7 +1028,10 @@ export default function Home() {
                     </svg>
                     <div>
                       <h3 className="font-bold">Alamat</h3>
-                      <p className="text-muted-foreground">Jl. Raya Bekasi Timur Regensi No.BlokE2/22, Cimuning, Kec. Mustika Jaya, Kota Bks, Jawa Barat 17155</p>
+                      <p className="text-muted-foreground">
+                        Jl. Raya Bekasi Timur Regensi No.BlokE2/22, Cimuning, Kec. Mustika Jaya, Kota Bks, Jawa Barat
+                        17155
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -984,7 +1044,7 @@ export default function Home() {
                       Isi formulir di bawah ini dan tim kami akan menghubungi Anda segera.
                     </p>
                   </div>
-                  <form className="space-y-4">
+                  <form className="space-y-4" onSubmit={handleWhatsAppSubmit}>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <label
@@ -997,6 +1057,7 @@ export default function Home() {
                           id="first-name"
                           className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           placeholder="John"
+                          required
                         />
                       </div>
                       <div className="space-y-2">
@@ -1010,6 +1071,7 @@ export default function Home() {
                           id="last-name"
                           className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           placeholder="Doe"
+                          required
                         />
                       </div>
                     </div>
@@ -1025,6 +1087,7 @@ export default function Home() {
                         type="email"
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="john.doe@example.com"
+                        required
                       />
                     </div>
                     <div className="space-y-2">
@@ -1039,6 +1102,7 @@ export default function Home() {
                         type="tel"
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="+62 822 1182 4620"
+                        required
                       />
                     </div>
                     <div className="space-y-2">
@@ -1052,9 +1116,12 @@ export default function Home() {
                         id="message"
                         className="flex min-h-[100px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="Tulis pesan Anda di sini..."
+                        required
                       />
                     </div>
-                    <Button className="w-full bg-green-600 hover:bg-green-700">Kirim Pesan</Button>
+                    <Button type="submit" className="w-full bg-green-600 hover:bg-green-700">
+                      Kirim Pesan via WhatsApp
+                    </Button>
                   </form>
                 </div>
               </div>
@@ -1088,23 +1155,26 @@ export default function Home() {
               <h3 className="text-lg font-bold">Layanan</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-primary">
-                    Solusi Pertanian Cerdas
+                  <Link
+                    href="https://v0-buat-dashboard.vercel.app/"
+                    className="text-muted-foreground hover:text-primary"
+                  >
+                    Konsultasi Pertanian Terintegrasi
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-primary">
-                    Sistem Akuakultur Digital
+                  <Link href="https://wa.me/6282211824620" className="text-muted-foreground hover:text-primary">
+                    Konsultasi Perikanan Terintegrasi
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-primary">
-                    Manajemen Peternakan Cerdas
+                  <Link href="https://wa.me/6282211824620" className="text-muted-foreground hover:text-primary">
+                    Konsultasi Peternakan Terintegrasi
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-primary">
-                    Konsultasi Terintegrasi
+                  <Link href="https://wa.me/6282211824620" className="text-muted-foreground hover:text-primary">
+                    Konsultasi Dashboard Terintegrasi
                   </Link>
                 </li>
               </ul>
@@ -1112,28 +1182,22 @@ export default function Home() {
             <div className="space-y-4">
               <h3 className="text-lg font-bold">Perusahaan</h3>
               <ul className="space-y-2 text-sm">
-            <button
-                  onClick={() => scrollToSection("about")} 
-                  className="text-muted-foreground hover:text-primary"
-                  >
-                    Tentang Kami
-                    </button>
+                <button onClick={() => scrollToSection("about")} className="text-muted-foreground hover:text-primary">
+                  Tentang Kami
+                </button>
                 <li>
                   <Link href="#" className="text-muted-foreground hover:text-primary">
                     Karir
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://v0-buat-dashboard.vercel.app/" className="text-muted-foreground hover:text-primary">
-                    Dashboard
+                  <Link href="#" className="text-muted-foreground hover:text-primary">
+                    Blog
                   </Link>
                 </li>
-                <button
-                  onClick={() => scrollToSection("contact")} 
-                  className="text-muted-foreground hover:text-primary"
-                  >
-                    Kontak
-                    </button>
+                <button onClick={() => scrollToSection("contact")} className="text-muted-foreground hover:text-primary">
+                  Kontak
+                </button>
               </ul>
             </div>
             <div className="space-y-4">
@@ -1244,6 +1308,451 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Video Demo Modal */}
+      <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
+        <DialogContent className="sm:max-w-[800px]">
+          <DialogHeader>
+            <DialogTitle>Demo Agrimarliv Technology</DialogTitle>
+            <DialogDescription>
+              Lihat bagaimana otomatisasi teknologi bekerja
+            </DialogDescription>
+          </DialogHeader>
+          <div className="aspect-video w-full">
+            <video src="/demo-video.mp4" controls className="w-full h-full rounded-md" autoPlay>
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Agriculture Details Modal */}
+      <Dialog open={agricultureOpen} onOpenChange={setAgricultureOpen}>
+        <DialogContent className="sm:max-w-[800px]">
+          <DialogHeader>
+            <DialogTitle>Solusi Pertanian Cerdas</DialogTitle>
+            <DialogDescription>Teknologi presisi untuk optimalisasi pertanian dan perkebunan</DialogDescription>
+          </DialogHeader>
+          <Tabs defaultValue="overview" className="w-full">
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="overview">Ikhtisar</TabsTrigger>
+              <TabsTrigger value="features">Fitur</TabsTrigger>
+              <TabsTrigger value="benefits">Manfaat</TabsTrigger>
+            </TabsList>
+            <TabsContent value="overview" className="space-y-4 pt-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="text-lg font-bold mb-2">Pertanian Presisi untuk Hasil Optimal</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Solusi Pertanian Cerdas kami mengintegrasikan teknologi IoT, kecerdasan buatan, dan analisis data
+                    untuk mengoptimalkan seluruh siklus pertanian, dari persiapan lahan hingga panen.
+                  </p>
+                  <p className="text-muted-foreground">
+                    Dengan jaringan sensor canggih dan algoritma pembelajaran mesin, sistem kami memantau kondisi tanah,
+                    cuaca, dan tanaman secara real-time, memberikan rekomendasi yang tepat untuk irigasi, pemupukan, dan
+                    pengendalian hama.
+                  </p>
+                </div>
+                <div className="flex items-center justify-center">
+                  <div className="rounded-lg overflow-hidden">
+                    <Image
+                      src="/placeholder.svg?height=300&width=400"
+                      width={400}
+                      height={300}
+                      alt="Pertanian Cerdas"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+            <TabsContent value="features" className="space-y-4 pt-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <div className="mr-4 rounded-full bg-green-100 p-2">
+                      <CloudRain className="h-5 w-5 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Sistem Irigasi Otomatis</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Mengoptimalkan penggunaan air berdasarkan kebutuhan tanaman, kelembaban tanah, dan prediksi
+                        cuaca. Mengurangi penggunaan air hingga 40% dibandingkan metode konvensional.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="mr-4 rounded-full bg-green-100 p-2">
+                      <Database className="h-5 w-5 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Pemupukan Presisi</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Analisis nutrisi tanah real-time untuk menentukan jenis, jumlah, dan waktu pemupukan yang
+                        optimal. Meningkatkan efisiensi penggunaan pupuk hingga 30%.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <div className="mr-4 rounded-full bg-green-100 p-2">
+                      <Microscope className="h-5 w-5 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Deteksi Penyakit Tanaman</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Sistem pengenalan gambar berbasis AI untuk mendeteksi penyakit tanaman pada tahap awal. Akurasi
+                        deteksi mencapai 95% untuk lebih dari 50 jenis penyakit tanaman umum.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="mr-4 rounded-full bg-green-100 p-2">
+                      <Smartphone className="h-5 w-5 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Aplikasi Mobile & Dashboard</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Akses data dan kontrol sistem dari mana saja melalui aplikasi mobile dan dashboard web yang
+                        intuitif. Notifikasi real-time untuk kondisi kritis.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+            <TabsContent value="benefits" className="space-y-4 pt-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="rounded-lg border p-4">
+                  <h4 className="font-bold text-green-600 mb-2">Peningkatan Hasil Panen</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Meningkatkan hasil panen hingga 25-30% melalui optimalisasi kondisi pertumbuhan dan pengelolaan
+                    sumber daya yang efisien.
+                  </p>
+                </div>
+                <div className="rounded-lg border p-4">
+                  <h4 className="font-bold text-green-600 mb-2">Pengurangan Biaya</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Mengurangi biaya operasional hingga 20% melalui penggunaan air, pupuk, dan pestisida yang lebih
+                    efisien.
+                  </p>
+                </div>
+                <div className="rounded-lg border p-4">
+                  <h4 className="font-bold text-green-600 mb-2">Pertanian Berkelanjutan</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Mengurangi dampak lingkungan dengan penggunaan sumber daya yang lebih efisien dan pengurangan
+                    penggunaan bahan kimia.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-4 p-4 rounded-lg bg-green-50 border border-green-100">
+                <h4 className="font-bold mb-2">Contoh Studi Kasus: Perkebunan Kopi di Jawa Barat</h4>
+                <p className="text-sm text-muted-foreground">
+                  Implementasi Solusi Pertanian Cerdas di perkebunan kopi seluas 50 hektar di Jawa Barat
+                  menghasilkan peningkatan produksi sebesar 28%, pengurangan penggunaan air sebesar 35%, dan peningkatan
+                  kualitas biji kopi yang signifikan dalam waktu satu tahun.
+                </p>
+              </div>
+            </TabsContent>
+          </Tabs>
+          <div className="flex justify-end mt-4">
+            <Button onClick={() => scrollToSection("contact")} className="bg-green-600 hover:bg-green-700">
+              Konsultasi Gratis
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Aquaculture Details Modal */}
+      <Dialog open={aquacultureOpen} onOpenChange={setAquacultureOpen}>
+        <DialogContent className="sm:max-w-[800px]">
+          <DialogHeader>
+            <DialogTitle>Sistem Akuakultur Digital</DialogTitle>
+            <DialogDescription>Solusi terintegrasi untuk budidaya perikanan air tawar dan laut</DialogDescription>
+          </DialogHeader>
+          <Tabs defaultValue="overview" className="w-full">
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="overview">Ikhtisar</TabsTrigger>
+              <TabsTrigger value="features">Fitur</TabsTrigger>
+              <TabsTrigger value="benefits">Manfaat</TabsTrigger>
+            </TabsList>
+            <TabsContent value="overview" className="space-y-4 pt-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="text-lg font-bold mb-2">Revolusi Budidaya Perikanan</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Sistem Akuakultur Digital kami menghadirkan pendekatan berbasis data untuk budidaya perikanan,
+                    menggabungkan sensor canggih, otomatisasi, dan analitik prediktif untuk mengoptimalkan produksi dan
+                    kesehatan ikan.
+                  </p>
+                  <p className="text-muted-foreground">
+                    Dengan pemantauan kualitas air real-time, manajemen pakan otomatis, dan deteksi dini penyakit,
+                    sistem kami membantu pembudidaya ikan meningkatkan produktivitas sambil mengurangi risiko dan biaya
+                    operasional.
+                  </p>
+                </div>
+                <div className="flex items-center justify-center">
+                  <div className="rounded-lg overflow-hidden">
+                    <Image
+                      src="/placeholder.svg?height=300&width=400"
+                      width={400}
+                      height={300}
+                      alt="Akuakultur Digital"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+            <TabsContent value="features" className="space-y-4 pt-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <div className="mr-4 rounded-full bg-blue-100 p-2">
+                      <Droplets className="h-5 w-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Monitoring Kualitas Air</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Sensor multi-parameter yang memantau suhu, pH, oksigen terlarut, amonia, dan parameter kualitas
+                        air lainnya secara real-time. Notifikasi otomatis saat parameter berada di luar rentang optimal.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="mr-4 rounded-full bg-blue-100 p-2">
+                      <BarChart3 className="h-5 w-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Analitik Prediktif</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Algoritma AI yang memprediksi kondisi air, pertumbuhan ikan, dan risiko penyakit berdasarkan
+                        data historis dan real-time. Rekomendasi proaktif untuk optimalisasi produksi.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <div className="mr-4 rounded-full bg-blue-100 p-2">
+                      <Cpu className="h-5 w-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Sistem Pemberian Pakan Otomatis</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Pengaturan waktu dan jumlah pakan yang presisi berdasarkan ukuran ikan, suhu air, dan tingkat
+                        aktivitas. Mengurangi pemborosan pakan hingga 30%.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="mr-4 rounded-full bg-blue-100 p-2">
+                      <Microscope className="h-5 w-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Deteksi Penyakit Ikan</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Sistem pengenalan gambar dan analisis perilaku untuk mendeteksi tanda-tanda awal penyakit ikan.
+                        Identifikasi lebih dari 20 jenis penyakit ikan umum dengan akurasi tinggi.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+            <TabsContent value="benefits" className="space-y-4 pt-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="rounded-lg border p-4">
+                  <h4 className="font-bold text-blue-600 mb-2">Peningkatan Tingkat Kelangsungan Hidup</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Meningkatkan tingkat kelangsungan hidup ikan hingga 40% melalui pemantauan kondisi air yang optimal
+                    dan deteksi dini penyakit.
+                  </p>
+                </div>
+                <div className="rounded-lg border p-4">
+                  <h4 className="font-bold text-blue-600 mb-2">Efisiensi Operasional</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Mengurangi biaya operasional hingga 25% melalui otomatisasi, penggunaan pakan yang efisien, dan
+                    pengurangan kebutuhan tenaga kerja.
+                  </p>
+                </div>
+                <div className="rounded-lg border p-4">
+                  <h4 className="font-bold text-blue-600 mb-2">Akuakultur Berkelanjutan</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Mengurangi dampak lingkungan dengan penggunaan air dan pakan yang lebih efisien, serta pengurangan
+                    limbah.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-4 p-4 rounded-lg bg-blue-50 border border-blue-100">
+                <h4 className="font-bold mb-2">Contoh Studi Kasus: Tambak Udang di Lampung</h4>
+                <p className="text-sm text-muted-foreground">
+                  Implementasi Sistem Akuakultur Digital di tambak udang seluas 5 hektar di Lampung menghasilkan
+                  peningkatan produksi sebesar 35%, pengurangan penggunaan pakan sebesar 22%, dan penurunan tingkat
+                  kematian udang sebesar 45% dalam satu siklus produksi.
+                </p>
+              </div>
+            </TabsContent>
+          </Tabs>
+          <div className="flex justify-end mt-4">
+            <Button onClick={() => scrollToSection("contact")} className="bg-blue-600 hover:bg-blue-700">
+              Konsultasi Gratis
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Livestock Details Modal */}
+      <Dialog open={livestockOpen} onOpenChange={setLivestockOpen}>
+        <DialogContent className="sm:max-w-[800px]">
+          <DialogHeader>
+            <DialogTitle>Manajemen Peternakan Cerdas</DialogTitle>
+            <DialogDescription>Teknologi monitoring dan optimalisasi untuk peternakan modern</DialogDescription>
+          </DialogHeader>
+          <Tabs defaultValue="overview" className="w-full">
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="overview">Ikhtisar</TabsTrigger>
+              <TabsTrigger value="features">Fitur</TabsTrigger>
+              <TabsTrigger value="benefits">Manfaat</TabsTrigger>
+            </TabsList>
+            <TabsContent value="overview" className="space-y-4 pt-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="text-lg font-bold mb-2">Transformasi Peternakan dengan Teknologi</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Manajemen Peternakan Cerdas kami mengintegrasikan IoT, kecerdasan buatan, dan analitik data untuk
+                    memantau kesehatan ternak, mengoptimalkan nutrisi, dan meningkatkan produktivitas secara
+                    keseluruhan.
+                  </p>
+                  <p className="text-muted-foreground">
+                    Dengan pemantauan kesehatan real-time, manajemen pakan presisi, dan prediksi hasil produksi, sistem
+                    kami membantu peternak mengambil keputusan berbasis data untuk meningkatkan efisiensi dan
+                    profitabilitas.
+                  </p>
+                </div>
+                <div className="flex items-center justify-center">
+                  <div className="rounded-lg overflow-hidden">
+                    <Image
+                      src="/placeholder.svg?height=300&width=400"
+                      width={400}
+                      height={300}
+                      alt="Peternakan Cerdas"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+            <TabsContent value="features" className="space-y-4 pt-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <div className="mr-4 rounded-full bg-purple-100 p-2">
+                      <svg
+                        className="h-5 w-5 text-purple-600"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Pemantauan Kesehatan Ternak</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Sensor wearable dan sistem pemantauan video untuk melacak aktivitas, suhu tubuh, dan pola makan
+                        ternak. Deteksi dini tanda-tanda penyakit dan stres.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="mr-4 rounded-full bg-purple-100 p-2">
+                      <Database className="h-5 w-5 text-purple-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Manajemen Pakan Presisi</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Formulasi pakan yang disesuaikan berdasarkan kebutuhan nutrisi individu, usia, dan kondisi
+                        kesehatan. Sistem pemberian pakan otomatis dengan pengukuran konsumsi yang akurat.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <div className="mr-4 rounded-full bg-purple-100 p-2">
+                      <BarChart3 className="h-5 w-5 text-purple-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Prediksi Hasil Produksi</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Model prediktif berbasis AI untuk memperkirakan pertumbuhan ternak, produksi susu/telur, dan
+                        waktu optimal untuk panen. Perencanaan produksi yang lebih akurat.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="mr-4 rounded-full bg-purple-100 p-2">
+                      <Cpu className="h-5 w-5 text-purple-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Kontrol Lingkungan Otomatis</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Sistem yang mengatur suhu, kelembaban, ventilasi, dan pencahayaan secara otomatis untuk
+                        menciptakan kondisi optimal bagi ternak. Pengurangan stres dan peningkatan kesejahteraan hewan.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+            <TabsContent value="benefits" className="space-y-4 pt-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="rounded-lg border p-4">
+                  <h4 className="font-bold text-purple-600 mb-2">Peningkatan Produktivitas</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Meningkatkan produktivitas ternak hingga 20-25% melalui manajemen kesehatan yang lebih baik, nutrisi
+                    optimal, dan pengurangan stres.
+                  </p>
+                </div>
+                <div className="rounded-lg border p-4">
+                  <h4 className="font-bold text-purple-600 mb-2">Efisiensi Biaya</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Mengurangi biaya operasional hingga 30% melalui penggunaan pakan yang lebih efisien, deteksi dini
+                    penyakit, dan otomatisasi proses.
+                  </p>
+                </div>
+                <div className="rounded-lg border p-4">
+                  <h4 className="font-bold text-purple-600 mb-2">Peternakan Berkelanjutan</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Mengurangi jejak karbon dengan penggunaan sumber daya yang lebih efisien dan pengelolaan limbah yang
+                    lebih baik.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-4 p-4 rounded-lg bg-purple-50 border border-purple-100">
+                <h4 className="font-bold mb-2">Contoh Studi Kasus: Peternakan Sapi Perah di Jawa Timur</h4>
+                <p className="text-sm text-muted-foreground">
+                  Implementasi Manajemen Peternakan Cerdas di peternakan sapi perah dengan 200 ekor sapi di Jawa
+                  Timur menghasilkan peningkatan produksi susu sebesar 18%, pengurangan biaya pakan sebesar 25%, dan
+                  penurunan tingkat penyakit sebesar 40% dalam waktu enam bulan.
+                </p>
+              </div>
+            </TabsContent>
+          </Tabs>
+          <div className="flex justify-end mt-4">
+            <Button onClick={() => scrollToSection("contact")} className="bg-purple-600 hover:bg-purple-700">
+              Konsultasi Gratis
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }
+
