@@ -192,21 +192,23 @@ export default function Home() {
         )}
       </header>
       <main className="flex-1">
-        <section id="hero" className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+        {/* Add responsive padding and spacing throughout the page */}
+        {/* Update hero section for better mobile display */}
+        <section id="hero" className="w-full py-8 md:py-12 lg:py-24 xl:py-32">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="flex items-center gap-2">
-                      <Plant className="h-8 w-8 text-green-600" />
+                      <Plant className="h-6 w-6 md:h-8 md:w-8 text-green-600" />
                     </div>
-                    <h2 className="text-2xl font-bold">Agricultur Maritime Livestock</h2>
+                    <h2 className="text-xl md:text-2xl font-bold">Agricultur Maritime Livestock</h2>
                   </div>
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                  <h1 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl/none">
                     Agrimarliv Technology Indonesia
                   </h1>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                  <p className="max-w-[600px] text-sm md:text-base lg:text-lg text-muted-foreground">
                     Teknologi cerdas berbasis IoT dan kecerdasan buatan (AI) untuk optimalisasi pertanian, perkebunan,
                     perikanan, dan peternakan di Indonesia.
                   </p>
@@ -214,24 +216,29 @@ export default function Home() {
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button
                     size="lg"
-                    className="bg-green-600 hover:bg-green-700"
-                    onClick={() => scrollToSection("visi")}
+                    className="bg-green-600 hover:bg-green-700 text-sm md:text-base"
+                    onClick={() => scrollToSection("about")}
                   >
                     Pelajari Lebih Lanjut
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                  <Button size="lg" variant="outline" onClick={() => setVideoOpen(true)}>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="text-sm md:text-base"
+                    onClick={() => setVideoOpen(true)}
+                  >
                     Lihat Demo
                   </Button>
                 </div>
               </div>
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center mt-6 lg:mt-0">
                 <Image
                   src="Logo Agrimarliv no bg.png"
                   width={550}
                   height={550}
                   alt="Agrimarliv Integrated Solutions"
-                  className="rounded-lg object-cover"
+                  className="rounded-lg object-cover w-full max-w-[300px] md:max-w-[400px] lg:max-w-[550px]"
                 />
               </div>
             </div>
@@ -253,8 +260,9 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
-              <div className="flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm">
+            {/* Make the about section cards more responsive */}
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 py-8 md:py-12">
+              <div className="flex flex-col items-center space-y-2 rounded-lg border p-4 md:p-6 shadow-sm">
                 <div className="rounded-full bg-green-100 p-3">
                   <Sprout className="h-6 w-6 text-green-600" />
                 </div>
@@ -263,7 +271,7 @@ export default function Home() {
                   Berpengalaman dalam bidang Riset dan Inovasi Teknologi
                 </p>
               </div>
-              <div className="flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm">
+              <div className="flex flex-col items-center space-y-2 rounded-lg border p-4 md:p-6 shadow-sm">
                 <div className="rounded-full bg-blue-100 p-3">
                   <LineChart className="h-6 w-6 text-blue-600" />
                 </div>
@@ -272,7 +280,7 @@ export default function Home() {
                   Telah menyelesaikan puluhan project IoT di berbagai sektor
                 </p>
               </div>
-              <div className="flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm">
+              <div className="flex flex-col items-center space-y-2 rounded-lg border p-4 md:p-6 shadow-sm">
                 <div className="rounded-full bg-purple-100 p-3">
                   <svg
                     className="h-6 w-6 text-purple-600"
@@ -312,8 +320,9 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3 mt-12">
-              <div className="flex flex-col items-center space-y-4 rounded-lg border p-6 shadow-sm">
+            {/* Update the visi section for better mobile display */}
+            <div className="grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-3 mt-8 md:mt-12">
+              <div className="flex flex-col items-center space-y-3 md:space-y-4 rounded-lg border p-4 md:p-6 shadow-sm">
                 <div className="rounded-full bg-green-100 p-4">
                   <Leaf className="h-8 w-8 text-green-600" />
                 </div>
@@ -324,7 +333,7 @@ export default function Home() {
                   berkelanjutan.
                 </p>
               </div>
-              <div className="flex flex-col items-center space-y-4 rounded-lg border p-6 shadow-sm">
+              <div className="flex flex-col items-center space-y-3 md:space-y-4 rounded-lg border p-4 md:p-6 shadow-sm">
                 <div className="rounded-full bg-blue-100 p-4">
                   <Fish className="h-8 w-8 text-blue-600" />
                 </div>
@@ -334,7 +343,7 @@ export default function Home() {
                   tawar dan laut dengan sistem monitoring kualitas air dan manajemen pakan otomatis.
                 </p>
               </div>
-              <div className="flex flex-col items-center space-y-4 rounded-lg border p-6 shadow-sm">
+              <div className="flex flex-col items-center space-y-3 md:space-y-4 rounded-lg border p-4 md:p-6 shadow-sm">
                 <div className="rounded-full bg-purple-100 p-4">
                   <svg
                     className="h-8 w-8 text-purple-600"
@@ -389,7 +398,8 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mt-12">
+            {/* Make the service cards more responsive */}
+            <div className="grid grid-cols-1 gap-4 sm:gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3 mt-8 md:mt-12">
               <div className="flex flex-col items-start rounded-lg border p-6 shadow-sm">
                 <div className="rounded-full bg-green-100 p-3 mb-4">
                   <Leaf className="h-6 w-6 text-green-600" />
@@ -597,7 +607,8 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 mt-12">
+            {/* Update the technology section for better stacking on mobile */}
+            <div className="grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-2 mt-8 md:mt-12">
               <div className="flex items-center justify-center">
                 <Image
                   src="bg1.jpg"
@@ -607,7 +618,8 @@ export default function Home() {
                   className="rounded-lg object-cover"
                 />
               </div>
-              <div className="flex flex-col justify-center space-y-4">
+              {/* Update the technology section for better stacking on mobile */}
+              <div className="flex flex-col justify-center space-y-3 md:space-y-4 order-2 md:order-1">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold">Internet of Things (IoT)</h3>
                   <p className="text-muted-foreground">
@@ -685,8 +697,8 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 mt-16">
-              <div className="flex flex-col justify-center space-y-4 order-2 md:order-1">
+            <div className="grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-2 mt-16">
+              <div className="flex flex-col justify-center space-y-3 md:space-y-4 order-2 md:order-1">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold">Kecerdasan Buatan & Big Data</h3>
                   <p className="text-muted-foreground">
@@ -775,7 +787,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 mt-16">
+            <div className="grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-2 mt-16">
               <div className="flex items-center justify-center">
                 <Image
                   src="Thumbnail.png"
@@ -785,7 +797,7 @@ export default function Home() {
                   className="rounded-lg object-cover"
                 />
               </div>
-              <div className="flex flex-col justify-center space-y-4">
+              <div className="flex flex-col justify-center space-y-3 md:space-y-4">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold">Platform Integrasi Data</h3>
                   <p className="text-muted-foreground">
@@ -880,8 +892,9 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 mt-12">
-              <div className="flex flex-col items-center text-center rounded-lg border p-6 shadow-sm">
+            {/* Make the keunggulan kami section more responsive */}
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4 mt-8 md:mt-12">
+              <div className="flex flex-col items-center text-center rounded-lg border p-4 md:p-6 shadow-sm">
                 <div className="rounded-full bg-green-100 p-3 mb-4">
                   <svg
                     className="h-6 w-6 text-green-600"
@@ -902,7 +915,7 @@ export default function Home() {
                   teknologi.
                 </p>
               </div>
-              <div className="flex flex-col items-center text-center rounded-lg border p-6 shadow-sm">
+              <div className="flex flex-col items-center text-center rounded-lg border p-4 md:p-6 shadow-sm">
                 <div className="rounded-full bg-green-100 p-3 mb-4">
                   <CircleDollarSign className="h-6 w-6 text-green-600" />
                 </div>
@@ -912,7 +925,7 @@ export default function Home() {
                   investasi pengembangan lahan dan teknologi kami.
                 </p>
               </div>
-              <div className="flex flex-col items-center text-center rounded-lg border p-6 shadow-sm">
+              <div className="flex flex-col items-center text-center rounded-lg border p-4 md:p-6 shadow-sm">
                 <div className="rounded-full bg-green-100 p-3 mb-4">
                   <svg
                     className="h-6 w-6 text-green-600"
@@ -932,7 +945,7 @@ export default function Home() {
                   Kami menjamin keamanan data pelanggan dengan sistem enkripsi dan perlindungan data terkini.
                 </p>
               </div>
-              <div className="flex flex-col items-center text-center rounded-lg border p-6 shadow-sm">
+              <div className="flex flex-col items-center text-center rounded-lg border p-4 md:p-6 shadow-sm">
                 <div className="rounded-full bg-green-100 p-3 mb-4">
                   <svg
                     className="h-6 w-6 text-green-600"
@@ -961,7 +974,8 @@ export default function Home() {
 
         <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+            {/* Update the contact section for better stacking on mobile */}
+            <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <div className="inline-block rounded-lg bg-green-100 px-3 py-1 text-sm text-green-600">
@@ -1037,7 +1051,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex items-center justify-center">
-                <div className="w-full max-w-md space-y-4 rounded-lg border bg-background p-6 shadow-sm">
+                {/* Update the contact form for better mobile display */}
+                <div className="w-full max-w-md space-y-3 md:space-y-4 rounded-lg border bg-background p-4 md:p-6 shadow-sm">
                   <div className="space-y-2 text-center">
                     <h3 className="text-2xl font-bold">Kirim Pesan</h3>
                     <p className="text-muted-foreground">
@@ -1131,7 +1146,8 @@ export default function Home() {
       </main>
       <footer className="w-full py-6 bg-muted">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {/* Make the footer more responsive */}
+          <div className="grid gap-6 md:gap-8 grid-cols-2 md:grid-cols-4">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Image
@@ -1159,22 +1175,12 @@ export default function Home() {
                     href="https://v0-buat-dashboard.vercel.app/"
                     className="text-muted-foreground hover:text-primary"
                   >
-                    Konsultasi Pertanian Terintegrasi
+                    Dashboard
                   </Link>
                 </li>
                 <li>
                   <Link href="https://wa.me/6282211824620" className="text-muted-foreground hover:text-primary">
-                    Konsultasi Perikanan Terintegrasi
-                  </Link>
-                </li>
-                <li>
-                  <Link href="https://wa.me/6282211824620" className="text-muted-foreground hover:text-primary">
-                    Konsultasi Peternakan Terintegrasi
-                  </Link>
-                </li>
-                <li>
-                  <Link href="https://wa.me/6282211824620" className="text-muted-foreground hover:text-primary">
-                    Konsultasi Dashboard Terintegrasi
+                    Konsultasi Terintegrasi
                   </Link>
                 </li>
               </ul>
@@ -1310,16 +1316,23 @@ export default function Home() {
       </footer>
 
       {/* Video Demo Modal */}
+
       <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
-        <DialogContent className="sm:max-w-[800px]">
+
+        <DialogContent className="w-[95vw] max-w-[800px] max-h-[90vh] overflow-y-auto p-4 md:p-6">
           <DialogHeader>
-            <DialogTitle>Demo Agrimarliv Technology</DialogTitle>
-            <DialogDescription>
-              Lihat bagaimana otomatisasi teknologi bekerja
+            <DialogTitle className="text-lg md:text-xl">Demo Agrimarliv Technology</DialogTitle>
+            <DialogDescription className="text-sm md:text-base">
+              Lihat bagaimana teknologi kami bekerja untuk meningkatkan produktivitas.
             </DialogDescription>
           </DialogHeader>
           <div className="aspect-video w-full">
-            <video src="/demo-video.mp4" controls className="w-full h-full rounded-md" autoPlay>
+            <video
+              src="/demo-video.mp4"
+              controls
+              className="w-full h-full rounded-md"
+              autoPlay
+            >
               Your browser does not support the video tag.
             </video>
           </div>
@@ -1327,95 +1340,93 @@ export default function Home() {
       </Dialog>
 
       {/* Agriculture Details Modal */}
+
       <Dialog open={agricultureOpen} onOpenChange={setAgricultureOpen}>
-        <DialogContent className="sm:max-w-[800px]">
+
+        <DialogContent className="w-[95vw] max-w-[800px] max-h-[90vh] overflow-y-auto p-4 md:p-6">
           <DialogHeader>
-            <DialogTitle>Solusi Pertanian Cerdas</DialogTitle>
-            <DialogDescription>Teknologi presisi untuk optimalisasi pertanian dan perkebunan</DialogDescription>
+            <DialogTitle className="text-lg md:text-xl">Solusi Pertanian Cerdas</DialogTitle>
+            <DialogDescription className="text-sm md:text-base">
+              Teknologi presisi untuk optimalisasi pertanian dan perkebunan
+            </DialogDescription>
           </DialogHeader>
           <Tabs defaultValue="overview" className="w-full">
-            <TabsList className="grid w-full grid-cols-3">
+
+            <TabsList className="grid w-full grid-cols-3 text-xs md:text-sm">
               <TabsTrigger value="overview">Ikhtisar</TabsTrigger>
               <TabsTrigger value="features">Fitur</TabsTrigger>
               <TabsTrigger value="benefits">Manfaat</TabsTrigger>
             </TabsList>
             <TabsContent value="overview" className="space-y-4 pt-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div>
-                  <h3 className="text-lg font-bold mb-2">Pertanian Presisi untuk Hasil Optimal</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Solusi Pertanian Cerdas kami mengintegrasikan teknologi IoT, kecerdasan buatan, dan analisis data
-                    untuk mengoptimalkan seluruh siklus pertanian, dari persiapan lahan hingga panen.
+                  <h3 className="text-base md:text-lg font-bold mb-2">Pertanian Presisi untuk Hasil Optimal</h3>
+                  <p className="text-sm md:text-base text-muted-foreground mb-4">
+                    Solusi Pertanian Cerdas kami mengintegrasikan teknologi IoT, kecerdasan buatan, dan analisis data untuk mengoptimalkan seluruh siklus pertanian, dari persiapan lahan hingga panen.
                   </p>
-                  <p className="text-muted-foreground">
-                    Dengan jaringan sensor canggih dan algoritma pembelajaran mesin, sistem kami memantau kondisi tanah,
-                    cuaca, dan tanaman secara real-time, memberikan rekomendasi yang tepat untuk irigasi, pemupukan, dan
-                    pengendalian hama.
+                  <p className="text-sm md:text-base text-muted-foreground">
+                    Dengan jaringan sensor canggih dan algoritma pembelajaran mesin, sistem kami memantau kondisi tanah, cuaca, dan tanaman secara real-time, memberikan rekomendasi yang tepat untuk irigasi, pemupukan, dan pengendalian hama.
                   </p>
                 </div>
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center mt-4 md:mt-0">
                   <div className="rounded-lg overflow-hidden">
                     <Image
                       src="/placeholder.svg?height=300&width=400"
                       width={400}
                       height={300}
                       alt="Pertanian Cerdas"
-                      className="object-cover"
+                      className="object-cover w-full max-w-[300px] md:max-w-[400px]"
                     />
                   </div>
                 </div>
               </div>
             </TabsContent>
             <TabsContent value="features" className="space-y-4 pt-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="mr-4 rounded-full bg-green-100 p-2">
-                      <CloudRain className="h-5 w-5 text-green-600" />
+                    <div className="mr-4 rounded-full bg-green-100 p-2 shrink-0">
+                      <CloudRain className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold">Sistem Irigasi Otomatis</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Mengoptimalkan penggunaan air berdasarkan kebutuhan tanaman, kelembaban tanah, dan prediksi
-                        cuaca. Mengurangi penggunaan air hingga 40% dibandingkan metode konvensional.
+                      <h4 className="text-sm md:text-base font-bold">Sistem Irigasi Otomatis</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Mengoptimalkan penggunaan air berdasarkan kebutuhan tanaman, kelembaban tanah, dan prediksi cuaca. Mengurangi penggunaan air hingga 40% dibandingkan metode konvensional.
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="mr-4 rounded-full bg-green-100 p-2">
-                      <Database className="h-5 w-5 text-green-600" />
+                    <div className="mr-4 rounded-full bg-green-100 p-2 shrink-0">
+                      <Database className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold">Pemupukan Presisi</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Analisis nutrisi tanah real-time untuk menentukan jenis, jumlah, dan waktu pemupukan yang
-                        optimal. Meningkatkan efisiensi penggunaan pupuk hingga 30%.
+                      <h4 className="text-sm md:text-base font-bold">Pemupukan Presisi</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Analisis nutrisi tanah real-time untuk menentukan jenis, jumlah, dan waktu pemupukan yang optimal. Meningkatkan efisiensi penggunaan pupuk hingga 30%.
                       </p>
                     </div>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="mr-4 rounded-full bg-green-100 p-2">
-                      <Microscope className="h-5 w-5 text-green-600" />
+                    <div className="mr-4 rounded-full bg-green-100 p-2 shrink-0">
+                      <Microscope className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold">Deteksi Penyakit Tanaman</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Sistem pengenalan gambar berbasis AI untuk mendeteksi penyakit tanaman pada tahap awal. Akurasi
-                        deteksi mencapai 95% untuk lebih dari 50 jenis penyakit tanaman umum.
+                      <h4 className="text-sm md:text-base font-bold">Deteksi Penyakit Tanaman</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Sistem pengenalan gambar berbasis AI untuk mendeteksi penyakit tanaman pada tahap awal. Akurasi deteksi mencapai 95% untuk lebih dari 50 jenis penyakit tanaman umum.
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="mr-4 rounded-full bg-green-100 p-2">
-                      <Smartphone className="h-5 w-5 text-green-600" />
+                    <div className="mr-4 rounded-full bg-green-100 p-2 shrink-0">
+                      <Smartphone className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold">Aplikasi Mobile & Dashboard</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Akses data dan kontrol sistem dari mana saja melalui aplikasi mobile dan dashboard web yang
-                        intuitif. Notifikasi real-time untuk kondisi kritis.
+                      <h4 className="text-sm md:text-base font-bold">Aplikasi Mobile & Dashboard</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Akses data dan kontrol sistem dari mana saja melalui aplikasi mobile dan dashboard web yang intuitif. Notifikasi real-time untuk kondisi kritis.
                       </p>
                     </div>
                   </div>
@@ -1423,138 +1434,128 @@ export default function Home() {
               </div>
             </TabsContent>
             <TabsContent value="benefits" className="space-y-4 pt-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="rounded-lg border p-4">
-                  <h4 className="font-bold text-green-600 mb-2">Peningkatan Hasil Panen</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Meningkatkan hasil panen hingga 25-30% melalui optimalisasi kondisi pertumbuhan dan pengelolaan
-                    sumber daya yang efisien.
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 md:gap-4">
+                <div className="rounded-lg border p-3 md:p-4">
+                  <h4 className="text-sm md:text-base font-bold text-green-600 mb-1 md:mb-2">Peningkatan Hasil Panen</h4>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Meningkatkan hasil panen hingga 25-30% melalui optimalisasi kondisi pertumbuhan dan pengelolaan sumber daya yang efisien.
                   </p>
                 </div>
-                <div className="rounded-lg border p-4">
-                  <h4 className="font-bold text-green-600 mb-2">Pengurangan Biaya</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Mengurangi biaya operasional hingga 20% melalui penggunaan air, pupuk, dan pestisida yang lebih
-                    efisien.
+                <div className="rounded-lg border p-3 md:p-4">
+                  <h4 className="text-sm md:text-base font-bold text-green-600 mb-1 md:mb-2">Pengurangan Biaya</h4>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Mengurangi biaya operasional hingga 20% melalui penggunaan air, pupuk, dan pestisida yang lebih efisien.
                   </p>
                 </div>
-                <div className="rounded-lg border p-4">
-                  <h4 className="font-bold text-green-600 mb-2">Pertanian Berkelanjutan</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Mengurangi dampak lingkungan dengan penggunaan sumber daya yang lebih efisien dan pengurangan
-                    penggunaan bahan kimia.
+                <div className="rounded-lg border p-3 md:p-4">
+                  <h4 className="text-sm md:text-base font-bold text-green-600 mb-1 md:mb-2">Pertanian Berkelanjutan</h4>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Mengurangi dampak lingkungan dengan penggunaan sumber daya yang lebih efisien dan pengurangan penggunaan bahan kimia.
                   </p>
                 </div>
               </div>
-              <div className="mt-4 p-4 rounded-lg bg-green-50 border border-green-100">
-                <h4 className="font-bold mb-2">Contoh Studi Kasus: Perkebunan Kopi di Jawa Barat</h4>
-                <p className="text-sm text-muted-foreground">
-                  Implementasi Solusi Pertanian Cerdas di perkebunan kopi seluas 50 hektar di Jawa Barat
-                  menghasilkan peningkatan produksi sebesar 28%, pengurangan penggunaan air sebesar 35%, dan peningkatan
-                  kualitas biji kopi yang signifikan dalam waktu satu tahun.
+              <div className="mt-4 p-3 md:p-4 rounded-lg bg-green-50 border border-green-100">
+                <h4 className="text-sm md:text-base font-bold mb-1 md:mb-2">Studi Kasus: Perkebunan Kopi di Jawa Barat</h4>
+                <p className="text-xs md:text-sm text-muted-foreground">
+                  Implementasi Solusi Pertanian Cerdas kami di perkebunan kopi seluas 50 hektar di Jawa Barat menghasilkan peningkatan produksi sebesar 28%, pengurangan penggunaan air sebesar 35%, dan peningkatan kualitas biji kopi yang signifikan dalam waktu satu tahun.
                 </p>
               </div>
             </TabsContent>
           </Tabs>
           <div className="flex justify-end mt-4">
-            <Button onClick={() => scrollToSection("contact")} className="bg-green-600 hover:bg-green-700">
+            <Button onClick={() => scrollToSection("contact")} className="bg-green-600 hover:bg-green-700 text-xs md:text-sm">
               Konsultasi Gratis
             </Button>
           </div>
         </DialogContent>
       </Dialog>
 
+// Update the Aquaculture and Livestock modals for better mobile display
       {/* Aquaculture Details Modal */}
       <Dialog open={aquacultureOpen} onOpenChange={setAquacultureOpen}>
-        <DialogContent className="sm:max-w-[800px]">
+        <DialogContent className="w-[95vw] max-w-[800px] max-h-[90vh] overflow-y-auto p-4 md:p-6">
           <DialogHeader>
-            <DialogTitle>Sistem Akuakultur Digital</DialogTitle>
-            <DialogDescription>Solusi terintegrasi untuk budidaya perikanan air tawar dan laut</DialogDescription>
+            <DialogTitle className="text-lg md:text-xl">Sistem Akuakultur Digital</DialogTitle>
+            <DialogDescription className="text-sm md:text-base">
+              Solusi terintegrasi untuk budidaya perikanan air tawar dan laut
+            </DialogDescription>
           </DialogHeader>
           <Tabs defaultValue="overview" className="w-full">
-            <TabsList className="grid w-full grid-cols-3">
+            <TabsList className="grid w-full grid-cols-3 text-xs md:text-sm">
               <TabsTrigger value="overview">Ikhtisar</TabsTrigger>
               <TabsTrigger value="features">Fitur</TabsTrigger>
               <TabsTrigger value="benefits">Manfaat</TabsTrigger>
             </TabsList>
             <TabsContent value="overview" className="space-y-4 pt-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div>
-                  <h3 className="text-lg font-bold mb-2">Revolusi Budidaya Perikanan</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Sistem Akuakultur Digital kami menghadirkan pendekatan berbasis data untuk budidaya perikanan,
-                    menggabungkan sensor canggih, otomatisasi, dan analitik prediktif untuk mengoptimalkan produksi dan
-                    kesehatan ikan.
+                  <h3 className="text-base md:text-lg font-bold mb-2">Revolusi Budidaya Perikanan</h3>
+                  <p className="text-sm md:text-base text-muted-foreground mb-4">
+                    Sistem Akuakultur Digital kami menghadirkan pendekatan berbasis data untuk budidaya perikanan, menggabungkan sensor canggih, otomatisasi, dan analitik prediktif untuk mengoptimalkan produksi dan kesehatan ikan.
                   </p>
-                  <p className="text-muted-foreground">
-                    Dengan pemantauan kualitas air real-time, manajemen pakan otomatis, dan deteksi dini penyakit,
-                    sistem kami membantu pembudidaya ikan meningkatkan produktivitas sambil mengurangi risiko dan biaya
-                    operasional.
+                  <p className="text-sm md:text-base text-muted-foreground">
+                    Dengan pemantauan kualitas air real-time, manajemen pakan otomatis, dan deteksi dini penyakit, sistem kami membantu pembudidaya ikan meningkatkan produktivitas sambil mengurangi risiko dan biaya operasional.
                   </p>
                 </div>
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center mt-4 md:mt-0">
                   <div className="rounded-lg overflow-hidden">
                     <Image
                       src="/placeholder.svg?height=300&width=400"
                       width={400}
                       height={300}
                       alt="Akuakultur Digital"
-                      className="object-cover"
+                      className="object-cover w-full max-w-[300px] md:max-w-[400px]"
                     />
                   </div>
                 </div>
               </div>
             </TabsContent>
             <TabsContent value="features" className="space-y-4 pt-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="mr-4 rounded-full bg-blue-100 p-2">
-                      <Droplets className="h-5 w-5 text-blue-600" />
+                    <div className="mr-4 rounded-full bg-blue-100 p-2 shrink-0">
+                      <Droplets className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold">Monitoring Kualitas Air</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Sensor multi-parameter yang memantau suhu, pH, oksigen terlarut, amonia, dan parameter kualitas
-                        air lainnya secara real-time. Notifikasi otomatis saat parameter berada di luar rentang optimal.
+                      <h4 className="text-sm md:text-base font-bold">Monitoring Kualitas Air</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Sensor multi-parameter yang memantau suhu, pH, oksigen terlarut, amonia, dan parameter kualitas air lainnya secara real-time. Notifikasi otomatis saat parameter berada di luar rentang optimal.
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="mr-4 rounded-full bg-blue-100 p-2">
-                      <BarChart3 className="h-5 w-5 text-blue-600" />
+                    <div className="mr-4 rounded-full bg-blue-100 p-2 shrink-0">
+                      <BarChart3 className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold">Analitik Prediktif</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Algoritma AI yang memprediksi kondisi air, pertumbuhan ikan, dan risiko penyakit berdasarkan
-                        data historis dan real-time. Rekomendasi proaktif untuk optimalisasi produksi.
+                      <h4 className="text-sm md:text-base font-bold">Analitik Prediktif</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Algoritma AI yang memprediksi kondisi air, pertumbuhan ikan, dan risiko penyakit berdasarkan data historis dan real-time. Rekomendasi proaktif untuk optimalisasi produksi.
                       </p>
                     </div>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="mr-4 rounded-full bg-blue-100 p-2">
-                      <Cpu className="h-5 w-5 text-blue-600" />
+                    <div className="mr-4 rounded-full bg-blue-100 p-2 shrink-0">
+                      <Cpu className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold">Sistem Pemberian Pakan Otomatis</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Pengaturan waktu dan jumlah pakan yang presisi berdasarkan ukuran ikan, suhu air, dan tingkat
-                        aktivitas. Mengurangi pemborosan pakan hingga 30%.
+                      <h4 className="text-sm md:text-base font-bold">Sistem Pemberian Pakan Otomatis</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Pengaturan waktu dan jumlah pakan yang presisi berdasarkan ukuran ikan, suhu air, dan tingkat aktivitas. Mengurangi pemborosan pakan hingga 30%.
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="mr-4 rounded-full bg-blue-100 p-2">
-                      <Microscope className="h-5 w-5 text-blue-600" />
+                    <div className="mr-4 rounded-full bg-blue-100 p-2 shrink-0">
+                      <Microscope className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold">Deteksi Penyakit Ikan</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Sistem pengenalan gambar dan analisis perilaku untuk mendeteksi tanda-tanda awal penyakit ikan.
-                        Identifikasi lebih dari 20 jenis penyakit ikan umum dengan akurasi tinggi.
+                      <h4 className="text-sm md:text-base font-bold">Deteksi Penyakit Ikan</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Sistem pengenalan gambar dan analisis perilaku untuk mendeteksi tanda-tanda awal penyakit ikan. Identifikasi lebih dari 20 jenis penyakit ikan umum dengan akurasi tinggi.
                       </p>
                     </div>
                   </div>
@@ -1562,41 +1563,36 @@ export default function Home() {
               </div>
             </TabsContent>
             <TabsContent value="benefits" className="space-y-4 pt-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="rounded-lg border p-4">
-                  <h4 className="font-bold text-blue-600 mb-2">Peningkatan Tingkat Kelangsungan Hidup</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Meningkatkan tingkat kelangsungan hidup ikan hingga 40% melalui pemantauan kondisi air yang optimal
-                    dan deteksi dini penyakit.
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 md:gap-4">
+                <div className="rounded-lg border p-3 md:p-4">
+                  <h4 className="text-sm md:text-base font-bold text-blue-600 mb-1 md:mb-2">Peningkatan Tingkat Kelangsungan Hidup</h4>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Meningkatkan tingkat kelangsungan hidup ikan hingga 40% melalui pemantauan kondisi air yang optimal dan deteksi dini penyakit.
                   </p>
                 </div>
-                <div className="rounded-lg border p-4">
-                  <h4 className="font-bold text-blue-600 mb-2">Efisiensi Operasional</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Mengurangi biaya operasional hingga 25% melalui otomatisasi, penggunaan pakan yang efisien, dan
-                    pengurangan kebutuhan tenaga kerja.
+                <div className="rounded-lg border p-3 md:p-4">
+                  <h4 className="text-sm md:text-base font-bold text-blue-600 mb-1 md:mb-2">Efisiensi Operasional</h4>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Mengurangi biaya operasional hingga 25% melalui otomatisasi, penggunaan pakan yang efisien, dan pengurangan kebutuhan tenaga kerja.
                   </p>
                 </div>
-                <div className="rounded-lg border p-4">
-                  <h4 className="font-bold text-blue-600 mb-2">Akuakultur Berkelanjutan</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Mengurangi dampak lingkungan dengan penggunaan air dan pakan yang lebih efisien, serta pengurangan
-                    limbah.
+                <div className="rounded-lg border p-3 md:p-4">
+                  <h4 className="text-sm md:text-base font-bold text-blue-600 mb-1 md:mb-2">Akuakultur Berkelanjutan</h4>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Mengurangi dampak lingkungan dengan penggunaan air dan pakan yang lebih efisien, serta pengurangan limbah.
                   </p>
                 </div>
               </div>
-              <div className="mt-4 p-4 rounded-lg bg-blue-50 border border-blue-100">
-                <h4 className="font-bold mb-2">Contoh Studi Kasus: Tambak Udang di Lampung</h4>
-                <p className="text-sm text-muted-foreground">
-                  Implementasi Sistem Akuakultur Digital di tambak udang seluas 5 hektar di Lampung menghasilkan
-                  peningkatan produksi sebesar 35%, pengurangan penggunaan pakan sebesar 22%, dan penurunan tingkat
-                  kematian udang sebesar 45% dalam satu siklus produksi.
+              <div className="mt-4 p-3 md:p-4 rounded-lg bg-blue-50 border border-blue-100">
+                <h4 className="text-sm md:text-base font-bold mb-1 md:mb-2">Studi Kasus: Tambak Udang di Lampung</h4>
+                <p className="text-xs md:text-sm text-muted-foreground">
+                  Implementasi Sistem Akuakultur Digital kami di tambak udang seluas 5 hektar di Lampung menghasilkan peningkatan produksi sebesar 35%, pengurangan penggunaan pakan sebesar 22%, dan penurunan tingkat kematian udang sebesar 45% dalam satu siklus produksi.
                 </p>
               </div>
             </TabsContent>
           </Tabs>
           <div className="flex justify-end mt-4">
-            <Button onClick={() => scrollToSection("contact")} className="bg-blue-600 hover:bg-blue-700">
+            <Button onClick={() => scrollToSection("contact")} className="bg-blue-600 hover:bg-blue-700 text-xs md:text-sm">
               Konsultasi Gratis
             </Button>
           </div>
@@ -1605,52 +1601,50 @@ export default function Home() {
 
       {/* Livestock Details Modal */}
       <Dialog open={livestockOpen} onOpenChange={setLivestockOpen}>
-        <DialogContent className="sm:max-w-[800px]">
+        <DialogContent className="w-[95vw] max-w-[800px] max-h-[90vh] overflow-y-auto p-4 md:p-6">
           <DialogHeader>
-            <DialogTitle>Manajemen Peternakan Cerdas</DialogTitle>
-            <DialogDescription>Teknologi monitoring dan optimalisasi untuk peternakan modern</DialogDescription>
+            <DialogTitle className="text-lg md:text-xl">Manajemen Peternakan Cerdas</DialogTitle>
+            <DialogDescription className="text-sm md:text-base">
+              Teknologi monitoring dan optimalisasi untuk peternakan modern
+            </DialogDescription>
           </DialogHeader>
           <Tabs defaultValue="overview" className="w-full">
-            <TabsList className="grid w-full grid-cols-3">
+            <TabsList className="grid w-full grid-cols-3 text-xs md:text-sm">
               <TabsTrigger value="overview">Ikhtisar</TabsTrigger>
               <TabsTrigger value="features">Fitur</TabsTrigger>
               <TabsTrigger value="benefits">Manfaat</TabsTrigger>
             </TabsList>
             <TabsContent value="overview" className="space-y-4 pt-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div>
-                  <h3 className="text-lg font-bold mb-2">Transformasi Peternakan dengan Teknologi</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Manajemen Peternakan Cerdas kami mengintegrasikan IoT, kecerdasan buatan, dan analitik data untuk
-                    memantau kesehatan ternak, mengoptimalkan nutrisi, dan meningkatkan produktivitas secara
-                    keseluruhan.
+                  <h3 className="text-base md:text-lg font-bold mb-2">Transformasi Peternakan dengan Teknologi</h3>
+                  <p className="text-sm md:text-base text-muted-foreground mb-4">
+                    Manajemen Peternakan Cerdas kami mengintegrasikan IoT, kecerdasan buatan, dan analitik data untuk memantau kesehatan ternak, mengoptimalkan nutrisi, dan meningkatkan produktivitas secara keseluruhan.
                   </p>
-                  <p className="text-muted-foreground">
-                    Dengan pemantauan kesehatan real-time, manajemen pakan presisi, dan prediksi hasil produksi, sistem
-                    kami membantu peternak mengambil keputusan berbasis data untuk meningkatkan efisiensi dan
-                    profitabilitas.
+                  <p className="text-sm md:text-base text-muted-foreground">
+                    Dengan pemantauan kesehatan real-time, manajemen pakan presisi, dan prediksi hasil produksi, sistem kami membantu peternak mengambil keputusan berbasis data untuk meningkatkan efisiensi dan profitabilitas.
                   </p>
                 </div>
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center mt-4 md:mt-0">
                   <div className="rounded-lg overflow-hidden">
                     <Image
                       src="/placeholder.svg?height=300&width=400"
                       width={400}
                       height={300}
                       alt="Peternakan Cerdas"
-                      className="object-cover"
+                      className="object-cover w-full max-w-[300px] md:max-w-[400px]"
                     />
                   </div>
                 </div>
               </div>
             </TabsContent>
             <TabsContent value="features" className="space-y-4 pt-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="mr-4 rounded-full bg-purple-100 p-2">
+                    <div className="mr-4 rounded-full bg-purple-100 p-2 shrink-0">
                       <svg
-                        className="h-5 w-5 text-purple-600"
+                        className="h-4 w-4 md:h-5 md:w-5 text-purple-600"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -1663,48 +1657,44 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-bold">Pemantauan Kesehatan Ternak</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Sensor wearable dan sistem pemantauan video untuk melacak aktivitas, suhu tubuh, dan pola makan
-                        ternak. Deteksi dini tanda-tanda penyakit dan stres.
+                      <h4 className="text-sm md:text-base font-bold">Pemantauan Kesehatan Ternak</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Sensor wearable dan sistem pemantauan video untuk melacak aktivitas, suhu tubuh, dan pola makan ternak. Deteksi dini tanda-tanda penyakit dan stres.
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="mr-4 rounded-full bg-purple-100 p-2">
-                      <Database className="h-5 w-5 text-purple-600" />
+                    <div className="mr-4 rounded-full bg-purple-100 p-2 shrink-0">
+                      <Database className="h-4 w-4 md:h-5 md:w-5 text-purple-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold">Manajemen Pakan Presisi</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Formulasi pakan yang disesuaikan berdasarkan kebutuhan nutrisi individu, usia, dan kondisi
-                        kesehatan. Sistem pemberian pakan otomatis dengan pengukuran konsumsi yang akurat.
+                      <h4 className="text-sm md:text-base font-bold">Manajemen Pakan Presisi</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Formulasi pakan yang disesuaikan berdasarkan kebutuhan nutrisi individu, usia, dan kondisi kesehatan. Sistem pemberian pakan otomatis dengan pengukuran konsumsi yang akurat.
                       </p>
                     </div>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="mr-4 rounded-full bg-purple-100 p-2">
-                      <BarChart3 className="h-5 w-5 text-purple-600" />
+                    <div className="mr-4 rounded-full bg-purple-100 p-2 shrink-0">
+                      <BarChart3 className="h-4 w-4 md:h-5 md:w-5 text-purple-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold">Prediksi Hasil Produksi</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Model prediktif berbasis AI untuk memperkirakan pertumbuhan ternak, produksi susu/telur, dan
-                        waktu optimal untuk panen. Perencanaan produksi yang lebih akurat.
+                      <h4 className="text-sm md:text-base font-bold">Prediksi Hasil Produksi</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Model prediktif berbasis AI untuk memperkirakan pertumbuhan ternak, produksi susu/telur, dan waktu optimal untuk panen. Perencanaan produksi yang lebih akurat.
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="mr-4 rounded-full bg-purple-100 p-2">
-                      <Cpu className="h-5 w-5 text-purple-600" />
+                    <div className="mr-4 rounded-full bg-purple-100 p-2 shrink-0">
+                      <Cpu className="h-4 w-4 md:h-5 md:w-5 text-purple-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold">Kontrol Lingkungan Otomatis</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Sistem yang mengatur suhu, kelembaban, ventilasi, dan pencahayaan secara otomatis untuk
-                        menciptakan kondisi optimal bagi ternak. Pengurangan stres dan peningkatan kesejahteraan hewan.
+                      <h4 className="text-sm md:text-base font-bold">Kontrol Lingkungan Otomatis</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Sistem yang mengatur suhu, kelembaban, ventilasi, dan pencahayaan secara otomatis untuk menciptakan kondisi optimal bagi ternak. Pengurangan stres dan peningkatan kesejahteraan hewan.
                       </p>
                     </div>
                   </div>
@@ -1712,47 +1702,41 @@ export default function Home() {
               </div>
             </TabsContent>
             <TabsContent value="benefits" className="space-y-4 pt-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="rounded-lg border p-4">
-                  <h4 className="font-bold text-purple-600 mb-2">Peningkatan Produktivitas</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Meningkatkan produktivitas ternak hingga 20-25% melalui manajemen kesehatan yang lebih baik, nutrisi
-                    optimal, dan pengurangan stres.
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 md:gap-4">
+                <div className="rounded-lg border p-3 md:p-4">
+                  <h4 className="text-sm md:text-base font-bold text-purple-600 mb-1 md:mb-2">Peningkatan Produktivitas</h4>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Meningkatkan produktivitas ternak hingga 20-25% melalui manajemen kesehatan yang lebih baik, nutrisi optimal, dan pengurangan stres.
                   </p>
                 </div>
-                <div className="rounded-lg border p-4">
-                  <h4 className="font-bold text-purple-600 mb-2">Efisiensi Biaya</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Mengurangi biaya operasional hingga 30% melalui penggunaan pakan yang lebih efisien, deteksi dini
-                    penyakit, dan otomatisasi proses.
+                <div className="rounded-lg border p-3 md:p-4">
+                  <h4 className="text-sm md:text-base font-bold text-purple-600 mb-1 md:mb-2">Efisiensi Biaya</h4>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Mengurangi biaya operasional hingga 30% melalui penggunaan pakan yang lebih efisien, deteksi dini penyakit, dan otomatisasi proses.
                   </p>
                 </div>
-                <div className="rounded-lg border p-4">
-                  <h4 className="font-bold text-purple-600 mb-2">Peternakan Berkelanjutan</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Mengurangi jejak karbon dengan penggunaan sumber daya yang lebih efisien dan pengelolaan limbah yang
-                    lebih baik.
+                <div className="rounded-lg border p-3 md:p-4">
+                  <h4 className="text-sm md:text-base font-bold text-purple-600 mb-1 md:mb-2">Peternakan Berkelanjutan</h4>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Mengurangi jejak karbon dengan penggunaan sumber daya yang lebih efisien dan pengelolaan limbah yang lebih baik.
                   </p>
                 </div>
               </div>
-              <div className="mt-4 p-4 rounded-lg bg-purple-50 border border-purple-100">
-                <h4 className="font-bold mb-2">Contoh Studi Kasus: Peternakan Sapi Perah di Jawa Timur</h4>
-                <p className="text-sm text-muted-foreground">
-                  Implementasi Manajemen Peternakan Cerdas di peternakan sapi perah dengan 200 ekor sapi di Jawa
-                  Timur menghasilkan peningkatan produksi susu sebesar 18%, pengurangan biaya pakan sebesar 25%, dan
-                  penurunan tingkat penyakit sebesar 40% dalam waktu enam bulan.
+              <div className="mt-4 p-3 md:p-4 rounded-lg bg-purple-50 border border-purple-100">
+                <h4 className="text-sm md:text-base font-bold mb-1 md:mb-2">Studi Kasus: Peternakan Sapi Perah di Jawa Timur</h4>
+                <p className="text-xs md:text-sm text-muted-foreground">
+                  Implementasi Manajemen Peternakan Cerdas kami di peternakan sapi perah dengan 200 ekor sapi di Jawa Timur menghasilkan peningkatan produksi susu sebesar 18%, pengurangan biaya pakan sebesar 25%, dan penurunan tingkat penyakit sebesar 40% dalam waktu enam bulan.
                 </p>
               </div>
             </TabsContent>
           </Tabs>
           <div className="flex justify-end mt-4">
-            <Button onClick={() => scrollToSection("contact")} className="bg-purple-600 hover:bg-purple-700">
+            <Button onClick={() => scrollToSection("contact")} className="bg-purple-600 hover:bg-purple-700 text-xs md:text-sm">
               Konsultasi Gratis
             </Button>
           </div>
         </DialogContent>
-      </Dialog>
+      </Dialog>\
     </div>
   )
 }
-
