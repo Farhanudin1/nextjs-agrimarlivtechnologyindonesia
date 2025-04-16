@@ -1470,7 +1470,6 @@ export default function Home() {
         </DialogContent>
       </Dialog>
 
-// Update the Aquaculture and Livestock modals for better mobile display
       {/* Aquaculture Details Modal */}
       <Dialog open={aquacultureOpen} onOpenChange={setAquacultureOpen}>
         <DialogContent className="w-[95vw] max-w-[800px] max-h-[90vh] overflow-y-auto p-4 md:p-6">
