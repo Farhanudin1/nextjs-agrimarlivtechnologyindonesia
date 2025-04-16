@@ -1146,7 +1146,6 @@ export default function Home() {
       </main>
       <footer className="w-full py-6 bg-muted">
         <div className="container px-4 md:px-6">
-          {/* Make the footer more responsive */}
           <div className="grid gap-6 md:gap-8 grid-cols-2 md:grid-cols-4">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
