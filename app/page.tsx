@@ -1743,7 +1743,7 @@ export default function Home() {
             </Button>
           </div>
         </DialogContent>
-      </Dialog>\
+      </Dialog>
     </div>
   )
 }
