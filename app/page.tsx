@@ -1171,7 +1171,7 @@ export default function Home() {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link
-                    href="https://v0-buat-dashboard.vercel.app/"
+                    href="https://wa.me/6282211824620"
                     className="text-muted-foreground hover:text-primary"
                   >
                     Konsultasi Pertanian Terintegrasi
