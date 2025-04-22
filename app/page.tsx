@@ -1466,7 +1466,7 @@ export default function Home() {
               <div className="mt-4 p-3 md:p-4 rounded-lg bg-green-50 border border-green-100">
                 <h4 className="text-sm md:text-base font-bold mb-1 md:mb-2">Contoh Studi Kasus: Perkebunan Kopi di Jawa Barat</h4>
                 <p className="text-xs md:text-sm text-muted-foreground">
-                  Implementasi Solusi Pertanian Cerdas kami di perkebunan kopi seluas 50 hektar di Jawa Barat menghasilkan peningkatan produksi sebesar 28%, pengurangan penggunaan air sebesar 35%, dan peningkatan kualitas biji kopi yang signifikan dalam waktu satu tahun.
+                  Contoh Implementasi Solusi Pertanian Cerdas di perkebunan kopi seluas 50 hektar di Jawa Barat menghasilkan peningkatan produksi sebesar 28%, pengurangan penggunaan air sebesar 35%, dan peningkatan kualitas biji kopi yang signifikan dalam waktu satu tahun.
                 </p>
               </div>
             </TabsContent>
@@ -1593,7 +1593,7 @@ export default function Home() {
               <div className="mt-4 p-3 md:p-4 rounded-lg bg-blue-50 border border-blue-100">
                 <h4 className="text-sm md:text-base font-bold mb-1 md:mb-2">Contoh Studi Kasus: Tambak Udang di Lampung</h4>
                 <p className="text-xs md:text-sm text-muted-foreground">
-                  Implementasi Sistem Akuakultur Digital kami di tambak udang seluas 5 hektar di Lampung menghasilkan peningkatan produksi sebesar 35%, pengurangan penggunaan pakan sebesar 22%, dan penurunan tingkat kematian udang sebesar 45% dalam satu siklus produksi.
+                  Contoh Implementasi Sistem Akuakultur Digital di tambak udang seluas 5 hektar di Lampung menghasilkan peningkatan produksi sebesar 35%, pengurangan penggunaan pakan sebesar 22%, dan penurunan tingkat kematian udang sebesar 45% dalam satu siklus produksi.
                 </p>
               </div>
             </TabsContent>
@@ -1732,7 +1732,7 @@ export default function Home() {
               <div className="mt-4 p-3 md:p-4 rounded-lg bg-purple-50 border border-purple-100">
                 <h4 className="text-sm md:text-base font-bold mb-1 md:mb-2">Contoh Studi Kasus: Peternakan Sapi Perah di Jawa Timur</h4>
                 <p className="text-xs md:text-sm text-muted-foreground">
-                  Implementasi Manajemen Peternakan Cerdas kami di peternakan sapi perah dengan 200 ekor sapi di Jawa Timur menghasilkan peningkatan produksi susu sebesar 18%, pengurangan biaya pakan sebesar 25%, dan penurunan tingkat penyakit sebesar 40% dalam waktu enam bulan.
+                  Contoh Implementasi Manajemen Peternakan Cerdas di peternakan sapi perah dengan 200 ekor sapi di Jawa Timur menghasilkan peningkatan produksi susu sebesar 18%, pengurangan biaya pakan sebesar 25%, dan penurunan tingkat penyakit sebesar 40% dalam waktu enam bulan.
                 </p>
               </div>
             </TabsContent>
