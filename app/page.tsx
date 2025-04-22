@@ -1332,7 +1332,7 @@ export default function Home() {
           <DialogHeader>
             <DialogTitle className="text-lg md:text-xl">Demo Agrimarliv Technology</DialogTitle>
             <DialogDescription className="text-sm md:text-base">
-              Lihat bagaimana teknologi kami bekerja untuk meningkatkan produktivitas.
+              Lihat bagaimana teknologi bekerja untuk meningkatkan produktivitas.
             </DialogDescription>
           </DialogHeader>
           <div className="aspect-video w-full">
