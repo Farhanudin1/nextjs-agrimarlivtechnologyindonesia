@@ -374,7 +374,7 @@ export default function Home() {
               </p>
               <div className="mt-8">
                 <Button
-                  onClick={() => (window.location.href = "https://v0-next-js-shadcn-ui-udinsunregs-projects.vercel.app/")}
+                  onClick={() => (window.location.href = "https://v0-dashboard-agrimarliv-udinsunregs-projects.vercel.app/")}
                   className="bg-green-600 hover:bg-green-700"
                 >
                   Pelajari Visi Kami
