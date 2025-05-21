@@ -1283,7 +1283,7 @@ export default function Home() {
                   </svg>
                   <span className="sr-only">Instagram</span>
                 </Link>
-                <Link href="https://www.instagram.com/agrimarlivtechnology/" className="text-muted-foreground hover:text-primary">
+                <Link href="#" className="text-muted-foreground hover:text-primary">
                   <svg
                     className="h-5 w-5"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1298,7 +1298,7 @@ export default function Home() {
                   </svg>
                   <span className="sr-only">Twitter</span>
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
+                <Link href="https://www.linkedin.com/in/agrimarliv-technology-indonesia-4415a135a/" className="text-muted-foreground hover:text-primary">
                   <svg
                     className="h-5 w-5"
                     xmlns="http://www.w3.org/2000/svg"
